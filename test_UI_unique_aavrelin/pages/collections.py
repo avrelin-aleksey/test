@@ -28,6 +28,7 @@ class CollectionPage(BasePage):
                 self.find(menu_loc).nth(1).click()
             else:
                 self.find(menu_loc).nth(0).click()
+            self.page.wait_for_timeout(2000)
             value_locator = self.find(value_loc)
             expect(value_locator).to_be_visible(timeout=1000)
             value_locator.click()
